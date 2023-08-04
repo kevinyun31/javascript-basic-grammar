@@ -9,7 +9,7 @@
     <div id="clock"></div>
     <script>
     function getTime() {
-       let timer = new Date();        
+       let timer = new Date();   
        let hour = timer.getHours();        
        let min = timer.getMinutes();        
        let sec = timer.getSeconds();        
@@ -17,13 +17,13 @@
      return now;
     }
  
-    function renderTime() {
+    let r = function renderTime() {
         clockEl.innerHTML = `<h1>${getTime()}</h1>`;        
     }
 
     let clockEl = document.querySelector('#clock');
     // setInerval(수행할함수, 반복시간); 1/1000초
-    setInterval(renderTime, 1000);
+    setInterval(r, 1000);
     </script>    
 </body>
 </html>
