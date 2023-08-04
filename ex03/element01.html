@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            color: yellowgreen;
+        }
+        .red-text{
+            color: red;
+        }
+        #box5{
+            color: blue;
+        }
+        #err{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div>box1</div>
+    <div>box2</div>
+    <div class="red-text">box3</div>
+    <div class="red-text">box4</div>
+    <div id="box5">box5</div>
+    <hr />
+    <div id="err"></div>
+    <button onclick="tagChange()">태그찾기</button>
+    <button onclick="classChange()">클래스찾기</button>
+    <button onclick="idChange()">아이디찾기</button>
+    <button onclick="err()">에러발생</button>
+    <script>
+        function err() {
+            let errEl = document.querySelector('#err');
+            errEl.innerHTML = "아이디 혹은 비밀번호를 잘못 적었어요";
+        }
+        function tagChange() {
+           let tagEl = document.querySelectorAll('div');
+           tagEl[0].innerHTML = '<h1>내용변경<h1>';
+           tagEl[1].innerHTML = '<h2>내용변경<h2>';
+           tagEl[2].innerHTML = '<h3>내용변경<h3>';
+           tagEl[3].textContent = '내용변경';
+           tagEl[4].textContent = '내용변경';
+        }
+        function classChange() {
+         let classEl = document.querySelectorAll('.red-text');
+          classEl[0].textContent = "클래스변경";
+          classEl[1].textContent = "클래스변경";
+        }
+        function idChange() {
+            let idEl = document.querySelectorAll('#box5');
+          idEl[0].textContent = "아이디변경";
+        }
+    </script>
+</body>
+</html>
