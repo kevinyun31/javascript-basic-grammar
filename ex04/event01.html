@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="alert('Hello World~1')">Click me</button>
+</body>
+<hr />
+
+<body>
+    <button id="myBtn">Click me</button>
+    <hr />
+    <button id="myBtn2">Click me</button>
+    <hr />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const myBtn = document.getElementById('myBtn');
+        myBtn.addEventListener("click", function () {
+            alert('Hello World~2');
+            $('#myBtn2').on('click', function () {
+                alert('Hello World~3');
+            });
+        });
+    </script>
+</body>
+</html>
